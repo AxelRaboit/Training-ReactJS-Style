@@ -1,0 +1,40 @@
+.container__home {
+    width: 100%;
+}
+
+.container__homepage {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.container__section {
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container__section__pattern1 {
+    background-color: rgb(33, 102, 104);
+}
+
+.container__section__pattern2 {
+    background-color: rgb(79, 121, 184);
+}
+
+.container__header__section {
+    margin-bottom: 20px;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+.container__content__section {
+    background-color: whitesmoke;
+    width: 100%;
+    height: 500px;
+}

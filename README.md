@@ -1,70 +1,94 @@
-# Getting Started with Create React App
+# Ce projet a pour but d'aborder plusieurs façon de faire du css
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- In line
+```
+<div style={{backgroundColor: 'red'}}>
+    //Content
+</div>
+```
 
-## Available Scripts
+```
+const changeColor = {
+    backgroundColor: 'red'
+}
 
-In the project directory, you can run:
+<div style={changeColor}>
+    //Content
+</div>
+```
 
-### `npm start`
+- Import file
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
+import './style.css';
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<div className="styleColor">
+    //Content
+</div>
+```
 
-### `npm test`
+- module
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-> Créer un fichier css avec l'extension .module.css (ex: myCss.module.css)
+-> contenu du fichier
+```
+.green {
+    background-color: green;
+}
+```
 
-### `npm run build`
+```
+import styles from './myCss.module.css';
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<div className={styles.green}>
+    //Content
+</div>
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- bootstrap
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+npm install bootstrap
+```
 
-### `npm run eject`
+Importer dans le fichier index.js (le mieux est de l'importer dans le fichier où il est utile de l'avoir)
+```
+import 'bootstrap/dist/css/bootstrap.min.css';
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- styled components
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+npm install styled-components
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```
+const Header = styled.div`
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #a82caa;
+`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+const Title = styled.h3`
+    font-size: 1.3em;
+`
 
-## Learn More
+const CardContent = styled.div`
+    background-color: whitesmoke;
+    width: 100%;
+    height: 500px;
+`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<div>
+    <Header>
+        <Title>Container with styled component</Title>
+    </Header>
+    <CardContent>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    </CardContent>
+</div>
+```
