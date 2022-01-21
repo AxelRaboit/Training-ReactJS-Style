@@ -63,6 +63,10 @@ npm install styled-components
 ```
 
 ```
+import styled from 'styled-components';
+```
+
+```
 const Header = styled.div`
     padding: 20px;
     width: 100%;
